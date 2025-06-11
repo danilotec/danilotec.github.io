@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Biblioteca de PDFs</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+
+            <h1>📚 Biblioteca de PDFs</h1>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="🔍 Pesquisar PDFs...">
+            </div>
+        </div>
+    </header>
+    <div class="container">
+
+        <div id="loading" class="loading">
+            Carregando PDFs...
+        </div>
+
+        <div id="pdfGrid" class="tech-grid" style="display: none;">
+        </div>
+    </div>
+
+    <script>
+const pdfList = [
+    {
+        name: "0758a Manual Mt 516.pdf",
+        filename: "0758a-manual-mt-516.pdf",
+        size: "304.2 KB"
+    },
+    {
+        name: "2205032910 01.dwg Pd.pdf",
+        filename: "2205032910-01.dwg.pdf PD.pdf",
+        size: "232.9 KB"
+    },
+    {
+        name: "2205695748 (1).pdf",
+        filename: "2205695748 (1).pdf",
+        size: "3.3 MB"
+    },
+    {
+        name: "2205695748.pdf",
+        filename: "2205695748.pdf",
+        size: "2.8 MB"
+    },
+    {
+        name: "4236445 0 Pt Sign.pdf",
+        filename: "4236445-0-PT-sign.pdf",
+        size: "168.8 KB"
+    },
+    {
+        name: "Apoio Suporte Técnico Cts (1).pdf",
+        filename: "APOIO_Suporte Técnico CTS (1).pdf",
+        size: "225.4 KB"
+    },
+    {
+        name: "Atlas Copco G7l Ff G11 Ff Manual De Instruções 1.pdf",
+        filename: "Atlas Copco - G7L FF - G11 FF - Manual de Instruções-1.pdf",
+        size: "2.9 MB"
+    },
+    {
+        name: "Atlas Copco G7l Ff G11 Ff Manual De Instruções.pdf",
+        filename: "Atlas Copco - G7L FF - G11 FF - Manual de Instruções.pdf",
+        size: "2.9 MB"
+    },
+    {
+        name: "Atlas Copco Gx7 11 2008 Manual De Instruções.pdf",
+        filename: "Atlas Copco - GX7-11 2008 - Manual de Instruções.pdf",
+        size: "3.2 MB"
+    },
+    {
+        name: "Atlas Copco Purificateur Air Bap (1).pdf",
+        filename: "Atlas-Copco-Purificateur_Air-BAP (1).pdf",
+        size: "1.2 MB"
+    },
+    {
+        name: "Chicago Pneumatic Cpx 80 100 Culus Instruction Book En Brendola.pdf",
+        filename: "Chicago_Pneumatic_CPX_80_100_cULus_Instruction_Book_EN_Brendola.pdf",
+        size: "1.3 MB"
+    },
+    {
+        name: "Esquema Eletrico Compressor Srp 4015.pdf",
+        filename: "Esquema Eletrico Compressor SRP-4015.pdf",
+        size: "1.7 MB"
+    },
+    {
+        name: "Esquema Elétrico Do Quadro De Automação.pdf",
+        filename: "Esquema Elétrico do Quadro de Automação.pdf",
+        size: "158.4 KB"
+    },
+    {
+        name: "Esquema Elétrico Do Quadro.pdf",
+        filename: "Esquema Elétrico do Quadro.pdf",
+        size: "7.3 MB"
+    },
+    {
+        name: "Ga55 90 Instruction Book En Wuxi 2920710960.pdf",
+        filename: "GA55-90-Instruction-Book-EN-Wuxi-2920710960.pdf",
+        size: "6.9 MB"
+    },
+    {
+        name: "Hex@ Controller.pdf",
+        filename: "HEX@ Controller.pdf",
+        size: "1002.4 KB"
+    },
+    {
+        name: "Hex@grid Installation Guide.pdf",
+        filename: "HEX@GRID Installation Guide.pdf",
+        size: "3.2 MB"
+    },
+    {
+        name: "Manual S501.pdf",
+        filename: "Manual-S501.pdf",
+        size: "3.5 MB"
+    },
+    {
+        name: "Manual Vector 3 P Ar Pa.pdf",
+        filename: "Manual-VECTOR 3 P AR_PA.pdf",
+        size: "1.6 MB"
+    },
+    {
+        name: "Manual Interface Control I Rev 1 04 11 Trilingue Interativo 1.pdf",
+        filename: "Manual_Interface_Control_I_rev_1_04_11_Trilingue_INTERATIVO_1.pdf",
+        size: "849.6 KB"
+    },
+    {
+        name: "Módulo Elektronikon Basic G7 22 Pd.pdf",
+        filename: "Módulo Elektronikon Basic G7-22.pdf PD.pdf",
+        size: "2.0 MB"
+    },
+    {
+        name: "Atlas Copco Compressor Vsd+.pdf",
+        filename: "atlas-copco-compressor-vsd+.pdf",
+        size: "5.6 MB"
+    },
+    {
+        name: "Atlas Copco Zt18 90 Zr45 90 Manual.pdf",
+        filename: "atlas-copco-zt18-90-zr45-90-manual.pdf",
+        size: "1.1 MB"
+    },
+    {
+        name: "Manual De Instrucao Ga 15 30vsd 2014.pdf",
+        filename: "manual-de-instrucao-ga-15-30vsd-2014.pdf",
+        size: "3.5 MB"
+    },
+    {
+        name: "Manual Instruoes Ga11 30+ Atlas Copco.pdf",
+        filename: "manual-instruoes-GA11-30+-atlas-copco.pdf",
+        size: "3.6 MB"
+    },
+    {
+        name: "Secador Fx.pdf",
+        filename: "secador-fx.pdf",
+        size: "2.4 MB"
+    }
+];
+
+        const pdfFolder = 'pdfs/'; // Pasta onde estão os PDFs no seu repositório
+        let allPdfs = [];
+
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function createPdfCard(pdf) {
+            return `
+                <div class="tech-item" data-name="${pdf.name.toLowerCase()}">
+                    <div class="pdf-icon">📄</div>
+                    <div class="pdf-title">${pdf.name}</div>
+                    <div class="pdf-size">${pdf.size}</div>
+                    <div class="button-group">
+                        <a href="${pdfFolder}${pdf.filename}" class="btn btn-view" target="_blank">
+                            Abrir
+                        </a>
+                        <a href="${pdfFolder}${pdf.filename}" class="btn btn-download" download>
+                            Baixar
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderPdfs(pdfs) {
+            const grid = document.getElementById('pdfGrid');
+            
+            if (pdfs.length === 0) {
+                grid.innerHTML = '<div class="no-results">📭 Nenhum PDF encontrado</div>';
+                return;
+            }
+            
+            grid.innerHTML = pdfs.map(createPdfCard).join('');
+        }
+
+        function filterPdfs(searchTerm) {
+            const filtered = allPdfs.filter(pdf => 
+                pdf.name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            renderPdfs(filtered);
+        }
+
+        // Inicialização
+        function init() {
+            allPdfs = pdfList;
+            
+            // Simular loading
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('pdfGrid').style.display = 'grid';
+                renderPdfs(allPdfs);
+            }, 1000);
+
+            // Setup search
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                filterPdfs(e.target.value);
+            });
+        }
+
+        // Iniciar quando a página carregar
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

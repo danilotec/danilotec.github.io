@@ -379,3 +379,82 @@
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
+
+
+        /* pdf page */
+    .search-container {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    #searchInput {
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 25px;
+        width: 100%;
+        max-width: 400px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        outline: none;
+    }
+
+    .pdf-icon {
+        font-size: 48px;
+        color: #e74c3c;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .pdf-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        text-align: center;
+        word-break: break-word;
+        
+        /* Limita a 2 linhas e adiciona ... */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2; /* Propriedade padrão para compatibilidade */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        line-height: 1.4;
+        max-height: 2.8em; /* 2 linhas × 1.4 line-height */
+        
+        /* Fallback para navegadores que não suportam line-clamp */
+        text-overflow: ellipsis;
+    }
+    
+    /* Tooltip para mostrar nome completo no hover */
+    .pdf-title:hover {
+        position: relative;
+        overflow: visible;
+        white-space: normal;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+    }
+    
+    .pdf-title[title]:hover::after {
+        content: attr(title);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,0.9);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        white-space: nowrap;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        margin-top: 5px;
+    }
+
+    .pdf-size {
+        font-size: 14px;
+        color: #7f8c8d;
+        text-align: center;
+        margin-bottom: 20px;
+    }
