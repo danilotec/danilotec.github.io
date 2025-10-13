@@ -3,257 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenvolvedor IoT & Backend | Especialista em Automação</title>
+    <title>Danilo Souza | Desenvolvedor Full-Stack IoT & Automação</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="profile animate">
-                    <div class="profile-pic">
-                        <img src="static/images/perfil.jpeg" alt="Perfil" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <h1>Danilo Souza</h1>
-                    <p class="tagline">
-                        <span class="highlight">🚀 Desenvolvedor IoT</span> | 
-                        <span class="highlight">📥 Desenvolvedor Backend</span> | 
-                        <span class="highlight">🌍 Técnico em Automação</span>
-                    </p>
-                    <p>Conectando o mundo físico ao digital com soluções avançadas de tecnologia</p>
-                    
-                    <div class="tech-icons">
-                        <div class="tech-icon"><i class="fas fa-microchip"></i></div>
-                        <div class="tech-icon"><i class="fas fa-wifi"></i></div>
-                        <div class="tech-icon"><i class="fas fa-server"></i></div>
-                        <div class="tech-icon"><i class="fas fa-code"></i></div>
-                        <div class="tech-icon"><i class="fas fa-cogs"></i></div>
-                    </div>
-                    
-                    <div>
-                        <a href="#contato" class="btn">Fale Comigo</a>
-                        <a href="#projetos" class="btn btn-outline">Ver Projetos</a>
-                        <a href="index_pdf.html" class="btn">Manuais</a>
-                    </div>
+    <header class="hero-section" role="banner">
+        <div class="container header-container">
+            <div class="profile-card animate">
+                <div class="profile-pic">
+                    <img src="static/images/perfil.jpeg" alt="Foto de Perfil de Danilo Souza" loading="lazy">
+                </div>
+                <h1 class="name">Danilo Souza</h1>
+                <p class="tagline">
+                    <span class="highlight">🚀 Desenvolvedor IoT</span> | 
+                    <span class="highlight">💻 Desenvolvedor Backend</span> | 
+                    <span class="highlight">⚙️ Especialista em Automação</span>
+                </p>
+                <p class="slogan">Conectando o mundo físico ao digital com soluções **robustos** e **escaláveis**.</p>
+                
+                <div class="tech-icons" aria-label="Tecnologias principais: Microcontroladores, Redes, Servidores, Código, Automação">
+                    <div class="tech-icon" title="Microcontroladores"><i class="fas fa-microchip"></i></div>
+                    <div class="tech-icon" title="Comunicação Wireless"><i class="fas fa-wifi"></i></div>
+                    <div class="tech-icon" title="Backend/Servidores"><i class="fas fa-server"></i></div>
+                    <div class="tech-icon" title="Desenvolvimento de Software"><i class="fas fa-code"></i></div>
+                    <div class="tech-icon" title="Automação"><i class="fas fa-cogs"></i></div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#contato" class="btn btn-primary">Fale Comigo</a>
+                    <a href="#projetos" class="btn btn-secondary">Ver Projetos</a>
+                    <a href="index_pdf.html" class="btn btn-link">Manuais & Docs</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="sobre" class="animate delay-1">
-        <div class="container">
-            <div class="section-title">
-                <h2>Sobre Mim</h2>
-            </div>
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-microchip card-icon"></i>
-                        <h3 class="card-title">Desenvolvedor IoT</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Especialista em criar soluções que conectam dispositivos ao mundo digital. Trabalho com diversas tecnologias de comunicação e protocolos para criar sistemas IoT eficientes e escaláveis.</p>
-                        <ul class="skill-list">
-                            <li>Desenvolvimento com ESP32</li>
-                            <li>Implementação de MQTT</li>
-                            <li>Sistemas LoRaWAN</li>
-                            <li>Comunicação BLE (Bluetooth Low Energy)</li>
-                            <li>Integração com APIs e serviços em nuvem</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-server card-icon"></i>
-                        <h3 class="card-title">Desenvolvedor Backend</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Criação de serviços robustos e escaláveis para suportar aplicações IoT e sistemas de automação. Desenvolvimento de APIs e serviços web para integração com dispositivos físicos.</p>
-                        <ul class="skill-list">
-                            <li>Desenvolvimento de API REST</li>
-                            <li>Implementação de Socket API</li>
-                            <li>Gerenciamento de bancos de dados</li>
-                            <li>Serviços em nuvem</li>
-                            <li>Processamento de dados em tempo real</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-cogs card-icon"></i>
-                        <h3 class="card-title">Técnico em Automação</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Implementação de soluções de automação industrial e residencial. Experiência com equipamentos e protocolos de comunicação industrial.</p>
-                        <ul class="skill-list">
-                            <li>Programação de CLP (Controlador Lógico Programável)</li>
-                            <li>Configuração de IHM (Interface Homem-Máquina)</li>
-                            <li>Implementação de inversores de frequência</li>
-                            <li>Sensores industriais</li>
-                            <li>Sistemas SCADA</li>
-                        </ul>
-                    </div>
+    <main>
+        <section id="sobre" class="section about-section animate delay-1" aria-labelledby="sobre-titulo">
+            <div class="container">
+                <h2 id="sobre-titulo" class="section-title">Minhas Especialidades</h2>
+                <div class="card-grid">
+                    <article class="card expertise-card">
+                        <header class="card-header">
+                            <i class="fas fa-microchip card-icon"></i>
+                            <h3 class="card-title">Desenvolvimento IoT</h3>
+                        </header>
+                        <div class="card-body">
+                            <p>Criação de soluções ponta-a-ponta que conectam dispositivos físicos à nuvem. Sistemas eficientes e escaláveis.</p>
+                            <h4 class="skill-subtitle">Tecnologias Chave:</h4>
+                            <ul class="skill-list">
+                                <li>**Hardware:** ESP32, Arduino, Raspberry Pi</li>
+                                <li>**Protocolos:** MQTT, LoRaWAN, BLE</li>
+                                <li>**Firmware:** Otimização de código e consumo de energia</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="card expertise-card">
+                        <header class="card-header">
+                            <i class="fas fa-server card-icon"></i>
+                            <h3 class="card-title">Desenvolvimento Backend</h3>
+                        </header>
+                        <div class="card-body">
+                            <p>Construção de APIs robustas para gerenciar dados de dispositivos e sistemas de automação, focando em performance e segurança.</p>
+                            <h4 class="skill-subtitle">Tecnologias Chave:</h4>
+                            <ul class="skill-list">
+                                <li>**APIs:** RESTful e Socket APIs (WebSockets)</li>
+                                <li>**Dados:** Gerenciamento de Bancos de Dados (SQL/NoSQL)</li>
+                                <li>**Cloud/Ops:** Serviços em Nuvem e Deploy (Docker, AWS/Azure/GCP)</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="card expertise-card">
+                        <header class="card-header">
+                            <i class="fas fa-cogs card-icon"></i>
+                            <h3 class="card-title">Técnico em Automação</h3>
+                        </header>
+                        <div class="card-body">
+                            <p>Implementação e manutenção de sistemas de controle em ambientes industriais e residenciais, garantindo eficiência operacional.</p>
+                            <h4 class="skill-subtitle">Competências:</h4>
+                            <ul class="skill-list">
+                                <li>**Controle:** Programação de CLP (Ladder, FBD, ST)</li>
+                                <li>**Interface:** Configuração de IHM e Sistemas SCADA</li>
+                                <li>**Acionamento:** Inversores de Frequência, Soft-Starters</li>
+                            </ul>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="tech-stack animate delay-2">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tecnologias & Ferramentas</h2>
-            </div>
-            <p>Domino um amplo conjunto de tecnologias para criar soluções completas e eficientes</p>
-            
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <i class="fas fa-microchip tech-item-icon"></i>
-                    <h4 class="tech-item-title">ESP32</h4>
-                    <p class="tech-item-desc">Desenvolvimento com microcontroladores ESP32 para aplicações IoT</p>
-                </div>
+        <section class="section tech-stack-section animate delay-2" aria-labelledby="tech-titulo">
+            <div class="container">
+                <h2 id="tech-titulo" class="section-title">Minha Stack de Ferramentas</h2>
+                <p class="tech-intro">Domínio em linguagens, protocolos e ferramentas essenciais para soluções completas.</p>
                 
-                <div class="tech-item">
-                    <i class="fas fa-broadcast-tower tech-item-icon"></i>
-                    <h4 class="tech-item-title">MQTT</h4>
-                    <p class="tech-item-desc">Protocolo de mensagens leve para comunicações IoT</p>
-                </div>
-                
-                <div class="tech-item">
-                    <i class="fas fa-wifi tech-item-icon"></i>
-                    <h4 class="tech-item-title">LoRaWAN</h4>
-                    <p class="tech-item-desc">Redes de longo alcance para IoT com baixo consumo de energia</p>
-                </div>
-                
-                <div class="tech-item">
-                    <i class="fab fa-bluetooth tech-item-icon"></i>
-                    <h4 class="tech-item-title">BLE</h4>
-                    <p class="tech-item-desc">Bluetooth Low Energy para comunicação de dispositivos</p>
-                </div>
-                
-                <div class="tech-item">
-                    <i class="fas fa-server tech-item-icon"></i>
-                    <h4 class="tech-item-title">API Rest</h4>
-                    <p class="tech-item-desc">Desenvolvimento de interfaces de programação para aplicações</p>
-                </div>
-                
-                <div class="tech-item">
-                    <i class="fas fa-plug tech-item-icon"></i>
-                    <h4 class="tech-item-title">Socket API</h4>
-                    <p class="tech-item-desc">Comunicação em tempo real entre aplicações</p>
-                </div>
-                
-                <div class="tech-item">
-                    <i class="fas fa-industry tech-item-icon"></i>
-                    <h4 class="tech-item-title">CLP</h4>
-                    <p class="tech-item-desc">Programação de controladores lógicos programáveis</p>
-                </div>
-                
-                <div class="tech-item">
-                    <i class="fas fa-desktop tech-item-icon"></i>
-                    <h4 class="tech-item-title">IHM</h4>
-                    <p class="tech-item-desc">Configuração de interfaces homem-máquina</p>
-                </div>
-                
-                <div class="tech-item">
-                    <i class="fas fa-tachometer-alt tech-item-icon"></i>
-                    <h4 class="tech-item-title">Inversores</h4>
-                    <p class="tech-item-desc">Implementação e configuração de inversores de frequência</p>
-                </div>
-                
-                <div class="tech-item">
-                    <i class="fas fa-search tech-item-icon"></i>
-                    <h4 class="tech-item-title">Sensores</h4>
-                    <p class="tech-item-desc">Integração de diversos sensores industriais e IoT</p>
+                <div class="tech-grid">
+                    <div class="tech-item" title="Linguagem Python (Backend)">
+                        <i class="fab fa-python tech-item-icon"></i>
+                        <h4 class="tech-item-title">Python</h4>
+                    </div>
+                    
+                    <div class="tech-item" title="Node.js (Backend/Serviços)">
+                        <i class="fab fa-node-js tech-item-icon"></i>
+                        <h4 class="tech-item-title">Node.js</h4>
+                    </div>
+                    
+                    <div class="tech-item" title="Containers Docker">
+                        <i class="fab fa-docker tech-item-icon"></i>
+                        <h4 class="tech-item-title">Docker</h4>
+                    </div>
+                    
+                    <div class="tech-item" title="Microcontrolador ESP32">
+                        <i class="fas fa-microchip tech-item-icon"></i>
+                        <h4 class="tech-item-title">ESP32/C++</h4>
+                    </div>
+                    
+                    <div class="tech-item" title="Protocolo MQTT">
+                        <i class="fas fa-broadcast-tower tech-item-icon"></i>
+                        <h4 class="tech-item-title">MQTT</h4>
+                    </div>
+                    
+                    <div class="tech-item" title="Rede LoRaWAN">
+                        <i class="fas fa-wifi tech-item-icon"></i>
+                        <h4 class="tech-item-title">LoRaWAN</h4>
+                    </div>
+                    
+                    <div class="tech-item" title="APIs RESTful">
+                        <i class="fas fa-server tech-item-icon"></i>
+                        <h4 class="tech-item-title">API REST</h4>
+                    </div>
+                    
+                    <div class="tech-item" title="Programação de CLP">
+                        <i class="fas fa-industry tech-item-icon"></i>
+                        <h4 class="tech-item-title">CLP</h4>
+                    </div>
+                    
+                    <div class="tech-item" title="Banco de Dados SQL/NoSQL">
+                        <i class="fas fa-database tech-item-icon"></i>
+                        <h4 class="tech-item-title">Databases</h4>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projetos" class="animate delay-3">
-        <div class="container">
-            <div class="section-title">
-                <h2>Projetos Realizados</h2>
+        <section id="projetos" class="section projects-section animate delay-3" aria-labelledby="projetos-titulo">
+            <div class="container">
+                <h2 id="projetos-titulo" class="section-title">Portfólio & Projetos</h2>
+                <div class="card-grid">
+                    <article class="card project-card">
+                        <header class="card-header">
+                            <i class="fas fa-home card-icon"></i>
+                            <h3 class="card-title">Sistema Smart Home Completo</h3>
+                        </header>
+                        <div class="card-body">
+                            <p>Automação residencial robusta para controle de iluminação, clima, segurança e monitoramento de consumo de energia.</p>
+                            <p class="project-tech-list">**Techs:** ESP32, MQTT, NodeJS/Python Backend, API Rest.</p>
+                            <a href="#" class="btn btn-project" aria-label="Ver detalhes do projeto Smart Home">Ver Detalhes</a>
+                        </div>
+                    </article>
+                    
+                    <article class="card project-card">
+                        <header class="card-header">
+                            <i class="fas fa-industry card-icon"></i>
+                            <h3 class="card-title">Monitoramento Preditivo Industrial</h3>
+                        </header>
+                        <div class="card-body">
+                            <p>Solução de Coleta de Dados e SCADA para análise preditiva de falhas em tempo real e relatórios automáticos.</p>
+                            <p class="project-tech-list">**Techs:** CLP, IHM, Sensores, API, Banco de Dados, Dashboard.</p>
+                            <a href="#" class="btn btn-project" aria-label="Ver detalhes do projeto Monitoramento Industrial">Ver Detalhes</a>
+                        </div>
+                    </article>
+                    
+                    <article class="card project-card">
+                        <header class="card-header">
+                            <i class="fas fa-map-marker-alt card-icon"></i>
+                            <h3 class="card-title">Rastreamento de Ativos LoRaWAN</h3>
+                        </header>
+                        <div class="card-body">
+                            <p>Desenvolvimento de dispositivos e backend para rastreamento de longo alcance com baixo consumo de energia.</p>
+                            <p class="project-tech-list">**Techs:** LoRaWAN, GPS, APIs, Dashboard em tempo real.</p>
+                            <a href="#" class="btn btn-project" aria-label="Ver detalhes do projeto Rastreamento de Ativos">Ver Detalhes</a>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-home card-icon"></i>
-                        <h3 class="card-title">Smart Home</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Sistema de automação residencial completo utilizando ESP32, MQTT e APIs personalizadas. Controle de iluminação, temperatura, segurança e consumo de energia em tempo real.</p>
-                        <p><strong>Tecnologias:</strong> ESP32, MQTT, NodeJS, API Rest</p>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-industry card-icon"></i>
-                        <h3 class="card-title">Monitoramento Industrial</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Sistema de monitoramento de máquinas industriais com coleta de dados em tempo real. Análise preditiva de falhas e relatórios automáticos de produtividade.</p>
-                        <p><strong>Tecnologias:</strong> CLP, IHM, Sensores, API, Banco de Dados</p>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-map-marker-alt card-icon"></i>
-                        <h3 class="card-title">Rastreamento de Ativos</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Solução de rastreamento de ativos com LoRaWAN para grandes áreas como fazendas e instalações industriais. Monitoramento de localização, temperatura e movimento.</p>
-                        <p><strong>Tecnologias:</strong> LoRaWAN, GPS, APIs, Dashboard em tempo real</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contato" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Entre em Contato</h2>
+        <section id="contato" class="section contact-section" aria-labelledby="contato-titulo">
+            <div class="container">
+                <h2 id="contato-titulo" class="section-title">Vamos Conectar!</h2>
+                <p class="contact-intro">Estou disponível para novos projetos, consultoria técnica e parcerias. Envie uma mensagem e vamos tirar sua ideia do papel.</p>
+                
+                <div class="contact-form-container">
+                    <form action="https://formspree.io/f/xovdrrba" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="sr-only">Seu Nome</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Seu Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Seu Email</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Seu Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="sr-only">Assunto</label>
+                            <input type="text" name="subject" id="subject" class="form-control" placeholder="Assunto (e.g. Proposta de Projeto IoT)">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Sua Mensagem</label>
+                            <textarea name="message" id="message" class="form-control" placeholder="Descreva seu projeto ou dúvida..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">Enviar Mensagem</button>
+                    </form>
+                </div>
             </div>
-            <p>Estou disponível para novos projetos e parcerias. Vamos conectar o mundo físico ao digital juntos!</p>
-            
-              <div class="contact-form">
-                <form action="https://formspree.io/f/xovdrrba" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Seu Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Seu Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="subject" class="form-control" placeholder="Assunto">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" class="form-control" placeholder="Sua Mensagem" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Enviar Mensagem</button>
-                </form>
-            </div>
-        </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 - Desenvolvedor IoT & Backend | Técnico em Automação</p>
-            
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/danilo-souza-516995240/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/danilotec" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://www.youtube.com/@daniloandrade3555" class="social-icon"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/danilo_4ndrade/" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <footer class="footer-section">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p>© 2025 | Danilo Souza - Desenvolvedor Full-Stack IoT</p>
+                <p class="footer-slogan">Conectando o mundo físico ao digital com excelência.</p>
             </div>
             
-            <p>Conectando o mundo físico ao digital</p>
+            <div class="social-links" aria-label="Links para Redes Sociais">
+                <a href="https://www.linkedin.com/in/danilo-souza-516995240/" class="social-icon" target="_blank" aria-label="LinkedIn de Danilo Souza"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/danilotec" class="social-icon" target="_blank" aria-label="GitHub de Danilo Souza"><i class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/@daniloandrade3555" class="social-icon" target="_blank" aria-label="YouTube de Danilo Souza"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/danilo_4ndrade/" class="social-icon" target="_blank" aria-label="Instagram de Danilo Souza"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </footer>
 
