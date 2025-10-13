@@ -1,460 +1,533 @@
+/* =========================================================================
+   1. Variáveis & Reset Básico
+   ========================================================================= */
 :root {
-            --primary: #2563eb;
-            --secondary: #059669;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --accent: #7c3aed;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            padding: 2rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(124, 58, 237, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
-            z-index: 1;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .profile {
-            margin-bottom: 2rem;
-        }
-        
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background-color: transparent;
-            border: 4px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .profile-icon {
-            font-size: 80px;
-            color: var(--primary);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        
-        .tagline {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-        
-        .highlight {
-            color: #fbbf24;
-            font-weight: 600;
-        }
-        
-        .tech-icons {
-            display: flex;
-            gap: 1rem;
-            margin: 1rem 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .tech-icon {
-            font-size: 1.5rem;
-            background-color: rgba(255, 255, 255, 0.2);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .tech-icon:hover {
-            transform: translateY(-5px);
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background-color: var(--accent);
-            color: white;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            margin: 1rem 0.5rem;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(124, 58, 237, 0.3);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 10px rgba(124, 58, 237, 0.4);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-            box-shadow: none;
-        }
-        
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary);
-        }
-        
-        section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2rem;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            margin: 0.5rem auto 0;
-            border-radius: 4px;
-        }
+    /* Cores */
+    --color-primary: #007BFF; /* Azul Principal - Botões, Destaques */
+    --color-secondary: #00CC7C; /* Verde Secundário - Highlights IoT */
+    --color-background: #121212; /* Fundo Escuro */
+    --color-card-bg: #1e1e1e; /* Fundo dos Cards */
+    --color-text-light: #f0f0f0; /* Texto Claro */
+    --color-text-muted: #aaaaaa; /* Texto Secundário */
+    --color-border: #333333; /* Linhas e Bordas */
+    --color-shadow: rgba(0, 0, 0, 0.4);
 
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card-header {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .card-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .card-body {
-            padding: 1.5rem;
-        }
-        
-        .skill-list {
-            list-style: none;
-        }
-        
-        .skill-list li {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .skill-list li::before {
-            content: '\f058';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-right: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .tech-stack {
-            text-align: center;
-            padding: 4rem 0;
-            background-color: #f1f5f9;
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .tech-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .tech-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .tech-item-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .tech-item-title {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tech-item-desc {
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-        
-        .contact {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            text-align: center;
-            padding: 4rem 0;
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto 0;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-        
-        .social-icon:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .tagline {
-                font-size: 1rem;
-            }
-            
-            .tech-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            }
-        }
+    /* Tipografia */
+    --font-family: 'Roboto', 'Arial', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
 
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    /* Espaçamento */
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+}
 
-        .animate {
-            animation: fadeIn 0.8s ease forwards;
-        }
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
+html {
+    scroll-behavior: smooth;
+}
 
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
 
-        /* pdf page */
-    .search-container {
-        margin-bottom: 30px;
-        text-align: center;
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+/* =========================================================================
+   2. Estrutura e Utilitários
+   ========================================================================= */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-light);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 10px auto 0;
+}
+
+/* Animações de Entrada (Para a classe .animate no HTML) */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+/* Simulação de como o JS ativaria isso */
+.animate.visible { 
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Adicione mais delays no JS ou aqui se necessário (ex: .delay-1 { transition-delay: 0.2s; }) */
+
+/* =========================================================================
+   3. Botões (CTAs)
+   ========================================================================= */
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 5px;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.btn-primary:hover {
+    background-color: #005fcc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--color-shadow);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.btn-link {
+    background: none;
+    color: var(--color-text-muted);
+    text-transform: none;
+    padding: 10px 15px;
+    border: none;
+}
+
+.btn-link:hover {
+    color: var(--color-secondary);
+}
+
+/* =========================================================================
+   4. Header & Hero Section
+   ========================================================================= */
+
+.hero-section {
+    background: linear-gradient(135deg, var--color-background 0%, #0a0a0a 100%);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    max-width: 600px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 5px solid var(--color-primary);
+    box-shadow: 0 0 0 8px var(--color-card-bg);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    font-family: var(--font-heading);
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+}
+
+.tagline {
+    font-size: 1.2em;
+    margin-bottom: var(--spacing-md);
+    font-weight: 300;
+}
+
+.highlight {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.slogan {
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1em;
+}
+
+/* Ícones de Tecnologia no Header */
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.tech-icon {
+    font-size: 1.5em;
+    color: var(--color-secondary);
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--color-card-bg);
+    transition: transform 0.3s;
+}
+
+.tech-icon:hover {
+    transform: scale(1.1);
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+/* =========================================================================
+   5. Cards (Sobre Mim e Projetos)
+   ========================================================================= */
+
+.card-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: var(--spacing-lg);
+}
+
+.card {
+    background-color: var(--color-card-bg);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--color-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--color-border);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-icon {
+    font-size: 2em;
+    color: var(--color-primary);
+    margin-right: 15px;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    color: var(--color-text-light);
+}
+
+.skill-subtitle {
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: var(--color-secondary);
+    font-weight: bold;
+}
+
+.skill-list, .project-tech-list {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.95em;
+    color: var(--color-text-muted);
+}
+
+.skill-list li::before {
+    content: "•";
+    color: var(--color-primary);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Projeto Card Específico */
+.project-card .card-body p:last-of-type {
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--color-secondary);
+}
+
+.btn-project {
+    margin-top: 15px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+/* =========================================================================
+   6. Tech Stack Section
+   ========================================================================= */
+
+.tech-stack-section {
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+.tech-intro {
+    font-size: 1.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.tech-item {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tech-item:hover {
+    background-color: #2a2a2a;
+    transform: scale(1.05);
+}
+
+.tech-item-icon {
+    font-size: 3em;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.tech-item-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--color-text-light);
+}
+
+/* =========================================================================
+   7. Contato e Formulário
+   ========================================================================= */
+
+.contact-section {
+    text-align: center;
+    padding: 80px 0 100px; /* Mais padding no final */
+}
+
+.contact-intro {
+    font-size: 1.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-card-bg);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--color-shadow);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.btn-submit {
+    width: 100%;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.sr-only { /* Apenas para leitores de tela */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* =========================================================================
+   8. Footer
+   ========================================================================= */
+
+.footer-section {
+    background-color: #0a0a0a;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: var(--color-text-muted);
+}
+
+.footer-slogan {
+    color: var(--color-secondary) !important;
+    font-weight: bold;
+    margin-bottom: 15px !important;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-icon {
+    font-size: 1.4em;
+    margin: 0 10px;
+    color: var(--color-text-light);
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--color-primary);
+}
+
+/* =========================================================================
+   9. Media Queries (Responsividade)
+   ========================================================================= */
+
+/* Smartphones (Telas até 600px) */
+@media (max-width: 600px) {
+    .section {
+        padding: 60px 0;
     }
 
-    #searchInput {
-        padding: 12px 20px;
-        font-size: 16px;
-        border: none;
-        border-radius: 25px;
-        width: 100%;
-        max-width: 400px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        outline: none;
+    .name {
+        font-size: 2.2em;
     }
 
-    .pdf-icon {
-        font-size: 48px;
-        color: #e74c3c;
-        text-align: center;
-        margin-bottom: 15px;
+    .tagline {
+        font-size: 1em;
     }
 
-    .pdf-title {
-        font-size: 18px;
-        font-weight: 600;
-        color: #2c3e50;
-        margin-bottom: 10px;
-        text-align: center;
-        word-break: break-word;
-        
-        /* Limita a 2 linhas e adiciona ... */
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2; /* Propriedade padrão para compatibilidade */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        line-height: 1.4;
-        max-height: 2.8em; /* 2 linhas × 1.4 line-height */
-        
-        /* Fallback para navegadores que não suportam line-clamp */
-        text-overflow: ellipsis;
+    .profile-pic {
+        width: 120px;
+        height: 120px;
     }
     
-    /* Tooltip para mostrar nome completo no hover */
-    .pdf-title:hover {
-        position: relative;
-        overflow: visible;
-        white-space: normal;
-        -webkit-line-clamp: unset;
-        line-clamp: unset;
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
-    .pdf-title[title]:hover::after {
-        content: attr(title);
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0,0,0,0.9);
-        color: white;
-        padding: 8px 12px;
-        border-radius: 6px;
-        font-size: 14px;
-        white-space: nowrap;
-        z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        margin-top: 5px;
+    .btn {
+        width: 80%; /* Botões maiores em mobile */
+        margin: 5px 0;
+    }
+    
+    .card-grid, .tech-grid {
+        grid-template-columns: 1fr; /* Coluna única para cards grandes */
     }
 
-    .pdf-size {
-        font-size: 14px;
-        color: #7f8c8d;
-        text-align: center;
-        margin-bottom: 20px;
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para itens menores */
     }
+
+    .tech-item {
+        padding: 10px;
+    }
+}
+
+/* Tablets (Telas entre 601px e 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    }
+}
