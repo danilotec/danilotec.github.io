@@ -1,22 +1,17 @@
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Para animar apenas uma vez
+            }
         });
-        
-        // Scroll animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.animate').forEach(el => {
-            observer.observe(el);
-        });
+    }, {
+        threshold: 0.1 // Começa a animar quando 10% do elemento estiver visível
+    });
+
+    // Observa todas as seções com a classe 'animate'
+    document.querySelectorAll('.animate').forEach(element => {
+        observer.observe(element);
+    });
+});
